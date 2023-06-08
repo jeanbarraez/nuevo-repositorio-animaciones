@@ -1,0 +1,368 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(231, 231, 238);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: grid;
+
+  grid-template-areas:
+    "aside"
+    "main"
+    "section"
+    "article"
+    "footer";
+  height: 100vh;
+  
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(5, 1f);
+}
+
+aside {
+  grid-area: aside;
+  background-color: rgb(13, 13, 20);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+aside img {
+  width: 5rem;
+  height: 5rem;
+  margin-left: 1rem;
+}
+
+aside img {
+  animation: logo 1s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;;
+}
+@keyframes logo {
+0% {
+  transform: translateZ(0) rotateY(0);
+}
+100% {
+  transform: translateZ(180px) rotateY(200deg);
+}
+}
+
+
+aside a {
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem;
+}
+
+main {
+  grid-area: main;
+  background-color: #faf5f5;
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+}
+
+main h1 {
+  color: rgb(15, 14, 14);
+  text-align: center;
+}
+
+.desktop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+  padding: 1rem;
+  border: 1px solid rgb(154, 154, 224);
+}
+
+.desktop img {
+  width: 100%;
+  height: 20rem;
+  filter: grayscale(100%);
+  transition: 1s ease;
+}
+
+.desktop img:hover {
+  filter: grayscale(0%);
+  transition: 1s ease;
+}
+
+.desktop:hover {
+  transform: scale(1.05);
+  transition: 0.5s ease;
+}
+
+.galeria {
+  grid-area: "main";
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
+
+section {
+  grid-area: section;
+  background-color: #edf1f3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+article {
+  grid-area: article;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.venezolanos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #a3c3ec;
+  width: 70vw;
+  height: 60vh;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: justify;
+  
+}
+
+.venezolanos h2 {
+  margin-bottom: 2rem;
+}
+
+.parrafo-biografia h2 {
+ text-align: center;
+ margin-top: 1rem;
+}
+
+.parrafo {
+  text-align: justify;
+}
+
+section h2 {
+  text-align: center;
+  margin-top: 1rem;
+}
+button {
+  background-color: #656bc2;
+	border: none;
+  color: #160b0b;
+	padding: 1rem 2rem;
+  margin-top: 1rem;
+  
+}
+
+button a{
+  text-decoration: none;
+  color: white;
+}
+
+button:hover {
+  color: white;
+  animation: estadistica 4s infinite;
+}
+
+@keyframes estadistica {
+  0% {
+    background-color: #0862e9;
+  }
+  50% {
+    background-color: rgb(206, 85, 55);
+  }
+
+  100% {
+    background-color: rgb(185, 194, 104);
+  }
+}
+
+button a {
+  text-decoration: none;
+  color: white;
+}
+footer {
+  grid-area: footer;
+  background-color: #494b4a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+
+}
+
+footer h3 {
+  margin-bottom: 1.5rem;
+}
+
+.redes {
+  display: flex;
+  padding: 1rem;
+  
+}
+
+.redes-sociales {
+  margin-right: 1rem;
+  
+}
+
+.redes-sociales {
+
+  animation: 3s ease-in infinite;
+}
+.redes-sociales:hover {
+  animation: sociales 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) both;
+}
+
+@keyframes sociales {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    transform-origin: 50% 100%;
+  }
+  10% {
+    transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+    transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    transform: rotate(4deg);
+  }
+  80% {
+    transform: rotate(-2deg);
+  }
+  90% {
+    transform: rotate(2deg);
+  }
+}
+
+.redes-sociales a {
+  color: white;
+}
+
+.historia {
+  border: 1px solid #0b0d0f;
+  margin: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70vw;
+}
+
+.historia img {
+  width: 100%;
+}
+
+/*responsivo*/
+
+@media (width>= 768px){
+  body {
+    display: grid;
+
+  grid-template-areas:
+    "aside main"
+    " aside section"
+    " aside article"
+    "footer footer";
+  height: 100vh;
+  grid-template-columns: 15% 85%;
+  grid-template-rows: repeat(4, 1rf);
+  }
+
+  .galeria {
+    grid-area: "main";
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    display: grid;
+    justify-content: center;
+    gap: 15px;
+    
+  }
+
+  aside {
+    grid-area: aside;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+  }
+
+  menu {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+   .biografia1 {
+    display: grid;
+    grid-area: "article";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    
+   }
+
+   .venezolanos {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 20rem;
+    height: 25rem;
+    margin: 1rem;
+    padding: 1rem;
+    text-align: justify;
+
+   }
+
+   .venezolanos {
+    animation: peloteros 2s linear both;
+  }
+
+  @keyframes peloteros {
+    0% {
+      transform: rotate3d(1, 1, 0, 0deg);
+      transform-origin: 0% 100%;
+    }
+    50% {
+      transform: rotate3d(1, 1, 0, 180deg);
+      transform-origin: 0% 100%;
+    }
+    100% {
+      transform: rotate3d(1, 1, 0, 360deg);
+      transform-origin: 0% 100%;
+    }
+  }
+.historia {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35rem;
+}
+
+main img{
+  width: 100%;
+}
+
+.venezolanos {
+  width: 80%;
+}
+}
+
